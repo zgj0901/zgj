@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公主午宴邀请函</title>
+    <style>
+        :root {
+            --pink: #FFB6C1;
+            --beige: #FFF5EE;
+            --gold: #DAA520;
+        }
+
+        body {
+            margin: 0;
+            background: var(--beige);
+            font-family: 'Comic Sans MS', '华康少女字体', 'Bradley Hand', cursive;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .page-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .invite-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid var(--pink);
+            position: relative;
+        }
+
+        .invite-card::before {
+            content: '🎀';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            font-size: 30px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 8px;
+            padding: 15px 0;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .dish-item {
+            padding: 10px;
+            border: 1px solid var(--pink);
+            border-radius: 6px;
+            background: rgba(255,182,193,0.1);
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .action-btn {
+            background: linear-gradient(135deg, var(--pink), #FFE4E1);
+            color: #6B4226;
+            padding: 10px 25px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: transform 0.2s;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.03);
+        }
+
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            accent-color: var(--pink);
+        }
+
+        h1 {
+            color: var(--gold);
+            margin: 0 0 15px 0;
+            font-family: '方正喵呜体', 'Segoe Print', cursive;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .invite-card p {
+            font-size: 18px;
+            color: #6B4226;
+            margin: 15px 0;
+            font-family: '幼圆', 'YouYuan', 'Comic Sans MS', cursive;
+        }
+
+        label {
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div id="page1">
+            <div class="invite-card">
+                <h1>✨ 周日午宴邀请 ✨</h1>
+                <p>诚邀公主光临温馨小屋<br>本周日中午12点整</p>
+                <button class="action-btn" onclick="changePage(2)">
+                    查看菜单 (50道)
+                </button>
+            </div>
+        </div>
+
+        <div id="page2" style="display:none">
+            <div class="invite-card">
+                <h2>🍽️ 家常菜单</h2>
+                <div class="menu-grid">
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish1">
+                        <label for="dish1">糖醋小排</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish2">
+                        <label for="dish2">番茄炒蛋</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish3">
+                        <label for="dish3">红烧狮子头</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish4">
+                        <label for="dish4">蒜蓉西兰花</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish5">
+                        <label for="dish5">可乐鸡翅</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish6">
+                        <label for="dish6">麻婆豆腐</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish7">
+                        <label for="dish7">清蒸鲈鱼</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish8">
+                        <label for="dish8">香菇油菜</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish9">
+                        <label for="dish9">土豆炖牛腩</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish10">
+                        <label for="dish10">蛋黄焗南瓜</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish11">
+                        <label for="dish11">鱼香肉丝</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish12">
+                        <label for="dish12">宫保鸡丁</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish13">
+                        <label for="dish13">白灼大虾</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish14">
+                        <label for="dish14">蚝油生菜</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish15">
+                        <label for="dish15">酱爆茄子</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish16">
+                        <label for="dish16">回锅肉</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish17">
+                        <label for="dish17">蒜苔炒腊肉</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish18">
+                        <label for="dish18">上汤娃娃菜</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish19">
+                        <label for="dish19">粉蒸排骨</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish20">
+                        <label for="dish20">冬瓜薏米汤</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish21">
+                        <label for="dish21">葱油拌面</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish22">
+                        <label for="dish22">椒盐蘑菇</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish23">
+                        <label for="dish23">豉汁凤爪</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish24">
+                        <label for="dish24">凉拌秋葵</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish25">
+                        <label for="dish25">菠萝咕咾肉</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish26">
+                        <label for="dish26">酸辣土豆丝</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish27">
+                        <label for="dish27">萝卜牛杂煲</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish28">
+                        <label for="dish28">蒜香烤肋排</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish29">
+                        <label for="dish29">三杯鸡</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish30">
+                        <label for="dish30">翡翠虾仁</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish31">
+                        <label for="dish31">梅菜扣肉</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish32">
+                        <label for="dish32">蚂蚁上树</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish33">
+                        <label for="dish33">蛋黄酥</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish34">
+                        <label for="dish34">酒酿圆子</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish35">
+                        <label for="dish35">糯米蒸排骨</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish36">
+                        <label for="dish36">银耳莲子羹</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish37">
+                        <label for="dish37">酱香饼</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish38">
+                        <label for="dish38">椰奶小方</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish39">
+                        <label for="dish39">桂花糖藕</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish40">
+                        <label for="dish40">珍珠丸子</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish41">
+                        <label for="dish41">葱烧海参</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish42">
+                        <label for="dish42">话梅小番茄</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish43">
+                        <label for="dish43">孜然羊肉</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish44">
+                        <label for="dish44">腐乳空心菜</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish45">
+                        <label for="dish45">蛋黄鸡翅</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish46">
+                        <label for="dish46">红糖糍粑</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish47">
+                        <label for="dish47">木瓜炖雪蛤</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish48">
+                        <label for="dish48">杨枝甘露</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish49">
+                        <label for="dish49">草莓大福</label>
+                    </div>
+                    <div class="dish-item">
+                        <input type="checkbox" id="dish50">
+                        <label for="dish50">玫瑰冰粉</label>
+                    </div>
+                </div>
+                <div>
+                    <button class="action-btn" onclick="changePage(1)">返回</button>
+                    <button class="action-btn" onclick="changePage(3)">提交</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="page3" style="display:none">
+            <div class="invite-card">
+                <h2>📅 预约详情</h2>
+                <div style="padding:15px; line-height: 1.8;">
+                    <p>⏰ 时间：本周日中午12点</p>
+                    <p>📍 地点：温馨小屋</p>
+                    <p>🌸 恭候您的到来</p>
+                </div>
+                <button class="action-btn" onclick="changePage(2)">修改菜单</button>
+                <button class="action-btn" onclick="alert('已收到确认，周日见！')">
+                    确认参加
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changePage(pageNumber) {
+            document.querySelectorAll('[id^=page]').forEach(page => {
+                page.style.display = 'none';
+            });
+            document.getElementById(`page${pageNumber}`).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
